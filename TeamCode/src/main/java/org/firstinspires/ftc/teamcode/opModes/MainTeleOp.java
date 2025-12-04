@@ -2,16 +2,17 @@ package org.firstinspires.ftc.teamcode.opModes;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.subsystems.DriveTrain;
 import org.firstinspires.ftc.teamcode.subsystems.Intake;
 
-@TeleOp(name="Drive")
+@TeleOp(name="Main TeleOp")
 public class MainTeleOp extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
-        DriveTrain drivetrain = new DriveTrain();
-        Intake intake = new Intake();
+        DriveTrain drivetrain = new DriveTrain(hardwareMap);
+        Intake intake = new Intake(hardwareMap);
         waitForStart();
         if (isStopRequested()) return;
 

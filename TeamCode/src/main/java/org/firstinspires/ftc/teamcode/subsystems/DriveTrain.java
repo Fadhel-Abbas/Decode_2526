@@ -1,18 +1,16 @@
 package org.firstinspires.ftc.teamcode.subsystems;
 
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
-
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+
 
 public class DriveTrain {
     private DcMotorEx leftMotor;
     private DcMotorEx rightMotor;
 
-    public DriveTrain(){
+    public DriveTrain(HardwareMap hardwareMap){
         leftMotor = (DcMotorEx) hardwareMap.dcMotor.get("leftMotor");
         rightMotor = (DcMotorEx) hardwareMap.dcMotor.get("rightMotor");
 

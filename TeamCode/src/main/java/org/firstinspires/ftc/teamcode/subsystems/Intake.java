@@ -4,13 +4,14 @@ import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.har
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Intake {
     private DcMotorEx intakeMotor;
     double maxVelocity;
     private boolean isIntakeRunning;
 
-    public Intake() {
+    public Intake(HardwareMap hardwareMap) {
         intakeMotor = (DcMotorEx) hardwareMap.dcMotor.get("intakeMotor");
         intakeMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
