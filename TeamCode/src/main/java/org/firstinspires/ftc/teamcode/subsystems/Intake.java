@@ -15,7 +15,8 @@ public class Intake {
         intakeMotor = (DcMotorEx) hardwareMap.dcMotor.get("intakeMotor");
         intakeMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        maxVelocity = 150;
+        // the maximum free speed of a core hex motor is 600tps
+        maxVelocity = -600;
     }
 
     public void setMaxVelocity(){

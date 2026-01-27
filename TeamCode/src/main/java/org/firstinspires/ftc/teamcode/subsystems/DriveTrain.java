@@ -24,6 +24,6 @@ public class DriveTrain {
     }
 
     public void setRightMotor(double velocity) {
-        rightMotor.setPower(velocity);
+        rightMotor.setVelocity(velocity);
     }
 }

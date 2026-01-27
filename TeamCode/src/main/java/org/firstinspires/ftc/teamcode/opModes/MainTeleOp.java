@@ -20,15 +20,15 @@ public class MainTeleOp extends LinearOpMode {
             double y = gamepad1.left_stick_y;
             double x = gamepad1.right_stick_x;
 
-            double leftVelocity = (y + x) * 20;
-            double rightVelocity = (y - x) * 20;
+            double leftVelocity = (y + x) * 3000;
+            double rightVelocity = (y - x) * 3000;
 
             drivetrain.setLeftMotor(leftVelocity);
             drivetrain.setRightMotor(rightVelocity);
 
 
-            if(gamepad1.xWasPressed()) intake.setMaxVelocity();
-            if(gamepad1.aWasPressed()) intake.setZeroVelocity();
+            if(gamepad1.xWasPressed() || gamepad2.xWasPressed()) intake.setMaxVelocity();
+            if(gamepad1.aWasPressed() || gamepad2.aWasPressed()) intake.setZeroVelocity();
         }
     }
 }
