@@ -9,6 +9,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class DriveTrain {
     private DcMotorEx leftMotor;
     private DcMotorEx rightMotor;
+    static final double TRIM = 1.1;
 
     public DriveTrain(HardwareMap hardwareMap){
         leftMotor = (DcMotorEx) hardwareMap.dcMotor.get("leftMotor");
@@ -24,6 +25,6 @@ public class DriveTrain {
     }
 
     public void setRightMotor(double velocity) {
-        rightMotor.setVelocity(velocity);
+        rightMotor.setVelocity(velocity * 1.1);
     }
 }
